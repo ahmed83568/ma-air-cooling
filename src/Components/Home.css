@@ -1,0 +1,11 @@
+.service-card {
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
+}
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+.choose_us:hover{
+    transform: scale(1.05);
+}

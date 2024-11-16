@@ -1,0 +1,50 @@
+/* src/Components/HomeCarousel.css */
+
+.home-carousel {
+  width: 90vw;
+  height: 50vh;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.home-carousel img {
+  width: 100%;             /* Ensures the image stretches to the width of the carousel */
+  height: 50vh;            /* Sets the height to 50% of the viewport height */
+  object-fit: cover;       /* Ensures the image covers the entire area without distortion */
+  object-position: top;    /* Positions the image's focus on the top */
+  position: relative;      /* Allows further adjustments if needed */
+}
+.home-carousel img:nth-child(1){
+  width: 100%;             /* Ensures the image stretches to the width of the carousel */
+  height: 50vh;            /* Sets the height to 50% of the viewport height */
+  object-fit: cover;       /* Ensures the image covers the entire area without distortion */
+  object-position: center;    /* Positions the image's focus on the top */
+  position: relative;      /* Allows further adjustments if needed */
+}
+
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 15px;
+  border-radius: 5px;
+  bottom: 20px;
+  text-align: left;
+}
+
+.carousel-caption h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+  color: #e0e0e0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-item {
+  transition: transform 0.6s ease-in-out; /* Smooth slide effect */
+}
