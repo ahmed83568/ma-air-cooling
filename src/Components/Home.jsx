@@ -3,11 +3,10 @@
   import HomeCarousel from './HomeCarousel';
   import { db } from '../../src/firebaseConfig';
   import { collection, addDoc } from "firebase/firestore";
-  import ac from "../Images/ac sevice.jpg";
-  import spare from "../Images/spare.jpg";
-  import lifespan from "../Images/cooling.png";
-  import installation from "../Images/installation.jpg";
+ 
   import close from "../Images/cancel.png"
+import HomeChoose from './HomeChoose';
+import Sales from './Sales';
 
   const Home = () => {
     const [formData, setFormData] = useState({
@@ -16,7 +15,7 @@
       query: '',
       phone: ''
     });
-    console.log(db)
+
     const [isFormVisible, setIsFormVisible] = useState(false); 
     const [phoneError,setPhoneError]=useState(false)
 
@@ -214,148 +213,11 @@
         </div>
 
         {/* Why Choose Us Section */}
-        <section 
-  style={{
-    padding: '5vh 2vw',
-    backgroundColor: '#f9f9f9',
-    marginTop: '5vh',
-    width: '90vw',
-    margin: 'auto',
-    boxShadow: '4px 8px 8px rgba(0, 0, 0, 0.5)',
-    borderRadius: '15px',
-  }}
->
-  <h2 
-    style={{
-      textAlign: 'center',
-      fontSize: '40px',
-      marginBottom: '3vh',
-      color: '#333',
-    }}
-  >
-    Why Choose Us?
-  </h2>
-  <div 
-    style={{
-      display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', gap: '3vh', marginTop: '2vh'
-    }}
-  >
-    {/* Card 1 */}
-    <div className='choose_us'
-      style={{
-        width: '20%',
-        textAlign: 'center',
-        padding: '2vh 2vw',
-        borderRadius: '10px',
-        boxShadow: '2px 4px 6px rgba(0, 0, 0, 0.2)',
-        backgroundColor: '#fff',
-        transition: 'transform 0.3s, box-shadow 0.3s',
-        cursor: 'pointer',
-      }}
-    >
-      <h3 style={{ fontSize: '1.5rem', color: '#007bff' }}>Experienced Technicians</h3>
-      <p>Our team is highly skilled with years of experience in air cooling solutions, ensuring top-notch service.</p>
-    </div>
-    {/* Card 2 */}
-    <div className='choose_us'
-      style={{
-        width: '20%',
-        textAlign: 'center',
-        padding: '2vh 2vw',
-        borderRadius: '10px',
-        boxShadow: '2px 4px 6px rgba(0, 0, 0, 0.2)',
-        backgroundColor: '#fff',
-        transition: 'transform 0.3s, box-shadow 0.3s',
-        cursor: 'pointer',
-      }}
-    >
-      <h3 style={{ fontSize: '1.5rem', color: '#007bff' }}>Quality Products</h3>
-      <p>We provide a wide range of quality air cooling products from leading brands, ensuring reliability and efficiency.</p>
-    </div>
-    {/* Card 3 */}
-    <div  className='choose_us'
-      style={{
-        width: '20%',
-        textAlign: 'center',
-        padding: '2vh 2vw',
-        borderRadius: '10px',
-        boxShadow: '2px 4px 6px rgba(0, 0, 0, 0.2)',
-        backgroundColor: '#fff',
-        transition: 'transform 0.3s, box-shadow 0.3s',
-        cursor: 'pointer',
-      }}
-    >
-      <h3 style={{ fontSize: '1.5rem', color: '#007bff' }}>Affordable Pricing</h3>
-      <p>Our services and products are priced competitively to provide the best value without compromising on quality.</p>
-    </div>
-    {/* Card 4 */}
-    <div className='choose_us'
-      style={{
-        width: '20%',
-        textAlign: 'center',
-        padding: '2vh 2vw',
-        borderRadius: '10px',
-        boxShadow: '2px 4px 6px rgba(0, 0, 0, 0.2)',
-        backgroundColor: '#fff',
-        transition: 'transform 0.3s, box-shadow 0.3s',
-        cursor: 'pointer',
-      }}
-    >
-      <h3 style={{ fontSize: '1.5rem', color: '#007bff' }}>Excellent Customer Service</h3>
-      <p>We are committed to providing excellent customer support and are always available to address your needs.</p>
-    </div>
-  </div>
-</section>
+      <HomeChoose/>
 
 
         {/* Sales and Services Section */}
-        <section style={{ padding: '5vh 2vw', marginTop: '5vh' }}>
-          <h2 style={{ textAlign: 'center', fontSize: '40px', marginBottom: '3vh' }}>Sales and Services</h2>
-          
-          {/* Products We Sell */}
-          <div style={{ marginBottom: '5vh' }}>
-            <h3 style={{ textAlign: 'center', fontSize: '30px' }}>Products We Sell</h3>
-            <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', gap: '3vh', marginTop: '2vh' }}>
-              <div style={{ width: '30%', textAlign: 'center' }}>
-                <img className='service-card' src={ac} alt="Product 1" style={{ width: '100%', borderRadius: '8px' }} />
-                <h4 style={{margin:'2vh 0'}}>Air Condition</h4>
-                <p>High-quality air coolers with advanced cooling technology for your comfort.</p>
-              </div>
-              <div  style={{ width: '30%', textAlign: 'center' }}>
-                <img className='service-card' src={spare} alt="Product 2" style={{ width: '100%', borderRadius: '8px', height: '37vh', objectFit: 'cover' }} />
-                <h4 style={{margin:'2vh 0'}}>Spare Parts</h4>
-                <p>Reliable and genuine spare parts for maintaining your air cooling systems.</p>
-              </div>
-              <div style={{ width: '30%', textAlign: 'center' }}>
-                <img className='service-card' src={lifespan} alt="Product 3" style={{ width: '100%', borderRadius: '8px',height:'37vh', objectFit: 'cover' }} />
-                <h4 style={{margin:'2vh 0'}}>Cooling Accessories</h4>
-                <p>Accessories to enhance the performance and lifespan of your air coolers.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Services We Provide */}
-          <div>
-            <h3 style={{ textAlign: 'center', fontSize: '30px' }}>Services We Provide</h3>
-            <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', gap: '3vh', marginTop: '2vh' }}>
-              <div style={{ width: '30%', textAlign: 'center' }}>
-                <img className='service-card' src={installation} alt="Service 1" style={{ width: '100%', borderRadius: '8px', height: '37vh', objectFit: 'cover', objectPosition: 'top' }} />
-                <h4 style={{margin:'2vh 0'}}>Installation Service</h4>
-                <p>Professional installation services to set up your cooling system efficiently.</p>
-              </div>
-              <div style={{ width: '30%', textAlign: 'center' }}>
-                <img className='service-card' src="https://via.placeholder.com/200x150" alt="Service 2" style={{ width: '100%', borderRadius: '8px' }} />
-                <h4 style={{margin:'2vh 0'}}>Maintenance and Repair</h4>
-                <p>Regular maintenance and repair services to keep your equipment running smoothly.</p>
-              </div>
-              <div style={{ width: '30%', textAlign: 'center' }}>
-                <img className='service-card' src="https://via.placeholder.com/200x150" alt="Service 3" style={{ width: '100%', borderRadius: '8px' }} />
-                <h4 style={{margin:'2vh 0'}}>Consultation</h4>
-                <p>Expert consultation to help you choose the best cooling solutions for your needs.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+      <Sales/>
 
         {/* Footer */}
         <div style={{
