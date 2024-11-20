@@ -1,4 +1,4 @@
-  import React, { useState } from 'react';
+  import React, { useEffect, useState } from 'react';
   import './Home.css'
   import HomeCarousel from './HomeCarousel';
   import { db } from '../../src/firebaseConfig';
@@ -7,6 +7,7 @@
   import close from "../Images/cancel.png"
 import HomeChoose from './HomeChoose';
 import Sales from './Sales';
+import whatsapp from "../Images/whatsapp.jpeg"
 
   const Home = () => {
     const [formData, setFormData] = useState({
@@ -15,9 +16,29 @@ import Sales from './Sales';
       query: '',
       phone: ''
     });
+    
+
 
     const [isFormVisible, setIsFormVisible] = useState(false); 
     const [phoneError,setPhoneError]=useState(false)
+    const [isWhatsAppVisible, setIsWhatsAppVisible] = useState(false);
+  const phoneNumber = process.env.REACT_APP_PHONE_NUMBER;
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsWhatsAppVisible(window.innerWidth < 768);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
     const handleChange = (e) => {
       const { name, value } = e.target;
@@ -62,11 +83,42 @@ import Sales from './Sales';
             right: '5%', 
             outline: 'none', 
             border: 'none', 
-            borderRadius: '5px' 
+            borderRadius: '5px',
+            zIndex:'100' 
           }}
         >
           Any Query?
         </button>
+        {isWhatsAppVisible && ( 
+        <a
+          style={{ textDecoration: "none" }}
+          href={`https://wa.me/${phoneNumber}?text=Hi%2C%20I%20have%20a%20query%20regarding%20your%20services`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="whatsapp-button1" 
+            style={{ 
+              position: 'fixed', 
+              top: '15%', 
+              left: '2%', 
+              outline: 'none', 
+              border: 'none', 
+              borderRadius: '5px',
+              zIndex: '100',
+              width:'10vw',
+              backgroundColor:'#428968',
+              display:'flex',
+              alignItems:'center'
+            }}
+          >
+            <img
+              style={{ width: "100%", marginRight: "0.5rem",mixBlendMode:"hard-light",backfaceVisibility:'unset'}}
+              src={whatsapp}
+              alt="WhatsApp Icon"
+            />
+          </button>
+        </a>
+      )}
         {isFormVisible && (
         <div 
           style={{

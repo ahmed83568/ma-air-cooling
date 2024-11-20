@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../Images/logo.jpg";
-import whatsapp from "../Images/whatsapp.jpeg";
+import whatsapp from "../Images/whatsapp.webp";
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,16 +14,17 @@ const Navbar = () => {
     <>
       <div
         style={{
-          backgroundColor: "rgb(0,170,220)",
+          backgroundColor: "#007bff",
           height: "10vh",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "1vw 2.5vw",
+          padding: "1vw 2.5vw 1vw 0",
           boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
           position: "sticky",
           zIndex: "10",
           top: "0",
+          overflow:'hidden',
         }}
       >
         {/* Logo Section */}
@@ -31,11 +33,11 @@ const Navbar = () => {
             className="logo"
             src={logo}
             alt="Company Logo"
-            style={{
-              width: "8vw",
-              height: "10vh",
-              mixBlendMode: "darken",
-            }}
+            // style={{
+            //   width: "9vw",
+            //   height: "10vh",
+            //   // mixBlendMode: "darken",
+            // }}
           />
         </div>
 
@@ -65,6 +67,7 @@ const Navbar = () => {
         </div>
 
         {/* Call Us and WhatsApp Us Buttons */}
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',}}>
         <div style={{ display: "flex", alignItems: "center" }}>
           <a href={`tel:${phoneNumber}`} style={{ marginRight: "1rem" }}>
             <button className="call-button">Call Us</button>
@@ -95,7 +98,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
+      </div>
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="mobile-menu">
@@ -115,87 +118,95 @@ const Navbar = () => {
       )}
 
       <style>
-        {`
-        .desktop-nav {
-          display: none;
-        }
-        .nav-link {
-          color: #333;
-          text-decoration: none;
-          font-size: 1rem;
-          font-weight: 500;
-          padding: 0.5vw;
-          transition: color 0.3s;
-        }
-        .nav-link:hover {
-          color: #fff;
-        }
-        .call-button, .whatsapp-button {
-          background-color: #007bff;
-          color: #fff;
-          border: none;
-          border-radius: 5px;
-          padding: 0.7vw 1.2vw;
-          font-size: 1rem;
-          font-weight: 600;
-          cursor: pointer;
-          animation: pulse 1.5s infinite alternate;
-        }
-        .whatsapp-button {
-          display: flex;
-          align-items: center;
-          background-color: #fff;
-          color: green;
-          animation: pulse1 1.5s infinite alternate;
-        }
-        .hamburger-icon {
-          cursor: pointer;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          height: 20px;
-        }
-        .hamburger-icon span {
-          background: #333;
-          height: 2px;
-          width: 25px;
-          border-radius: 5px;
-        }
-        .mobile-menu {
-          background-color: rgb(0, 170, 220);
-          padding: 1rem;
-          display: flex;
-          flex-direction: column;
-          position: absolute;
-          top: 10vh;
-          width: 100%;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          z-index: 9;
-        }
-        .mobile-link {
-          color: #fff;
-          text-decoration: none;
-          font-size: 1.2rem;
-          padding: 1rem 0;
-          text-align: center;
-        }
-        .mobile-link:hover {
-          color: #007bff;
-        }
+  {`
+    .desktop-nav {
+      display: none;
+      overflow:hidden;
+    }
+    .nav-link {
+      color: #333;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.5vw;
+      transition: color 0.3s;
+    }
+    .nav-link:hover {
+      color: #fff;
+    }
+    .call-button, .whatsapp-button {
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      padding: 0.7vw 1.2vw;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      animation: pulse 1.5s infinite alternate;
+    }
+    .whatsapp-button {
+      display: flex;
+      align-items: center;
+      background-color: green;
+      color: white;
+      {/* animation: pulse1 1.5s infinite alternate; */}
+    }
+    .whatsapp-button img {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .hamburger-icon {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 20px;
+    }
+    .hamburger-icon span {
+      background: #333;
+      height: 2px;
+      width: 25px;
+      border-radius: 5px;
+    }
+    .mobile-menu {
+      background-color: '#007bff';
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 10vh;
+      width: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 9;
+    }
+    .mobile-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .mobile-link:hover {
+      color: #007bff;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+    @media (min-width: 768px) {
+      .desktop-nav { display: flex; }
+      .hamburger-menu { display: none; }
+      .logo { width: 100.5px; }
+    }
+    @media (max-width: 768px) {
+      .call-button { font-size: 0.8rem; padding: 2vw 3.5vw; }
+      .whatsapp-button { display: none; } /* Hide WhatsApp button on screens smaller than 768px */
+      .logo { width: 91px; }
+    }
+  `}
+</style>
 
-        @keyframes pulse {
-          0% { transform: scale(1); }
-          100% { transform: scale(1.1); }
-        }
-        @media (min-width: 768px) {
-          .desktop-nav { display: flex; }
-          .hamburger-menu { display: none; }
-        }
-        @media (max-width: 768px) {
-          .call-button, .whatsapp-button { font-size: 0.8rem; padding: 0.5vw 1vw; }
-        }
-      `}
-      </style>
     </>
   );
 };

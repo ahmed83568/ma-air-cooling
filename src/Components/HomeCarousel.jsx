@@ -7,6 +7,9 @@ import washing from "../Images/washing.png"
 import fridge from "../Images/refigrator.jpg"
 import ac from "../Images/ac sevice.jpg"
 import carousel from "../Images/carousel.jpg"
+import caro from "../Images/caro.jpg"
+import caro1 from "../Images/caro1.jpg"
+import caro2 from "../Images/caro2.jpg"
 
 const HomeCarousel = () => {
   return (
@@ -36,7 +39,7 @@ const HomeCarousel = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={washing}
+          src={caro}
           alt="Second slide"
         />
         <Carousel.Caption className="carousel-caption">
@@ -47,7 +50,18 @@ const HomeCarousel = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={fridge}
+          src={caro1}
+          alt="Third slide"
+        />
+        <Carousel.Caption className="carousel-caption">
+          <h3>Third Slide</h3>
+          <p>Description of the third slide.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={caro2}
           alt="Third slide"
         />
         <Carousel.Caption className="carousel-caption">

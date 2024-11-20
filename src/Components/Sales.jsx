@@ -3,6 +3,8 @@ import ac from "../Images/ac sevice.jpg";
 import spare from "../Images/spare.jpg";
 import lifespan from "../Images/cooling.png";
 import installation from "../Images/installation.jpg";
+import maintainance from "../Images/maintainance.jpg"
+import consultant from "../Images/consultant.png"
 
 const Sales = () => {
   return (
@@ -71,6 +73,7 @@ const Sales = () => {
                   height: '200px',
                   objectFit: 'cover',
                   borderRadius: '8px',
+                  objectPosition:index===2?'top left':''
                 }}
               />
               <h4 style={{ margin: '1rem 0', fontSize: '1.2rem', color: '#007bff' }}>{title}</h4>
@@ -100,12 +103,12 @@ const Sales = () => {
               desc: 'Professional installation services to set up your cooling system efficiently.',
             },
             {
-              img: 'https://via.placeholder.com/200x150',
+              img: maintainance,
               title: 'Maintenance and Repair',
               desc: 'Regular maintenance and repair services to keep your equipment running smoothly.',
             },
             {
-              img: 'https://via.placeholder.com/200x150',
+              img: consultant,
               title: 'Consultation',
               desc: 'Expert consultation to help you choose the best cooling solutions for your needs.',
             },
@@ -140,6 +143,7 @@ const Sales = () => {
                   height: '200px',
                   objectFit: 'cover',
                   borderRadius: '8px',
+                  objectPosition:index===0?'top':'center',
                 }}
               />
               <h4 style={{ margin: '1rem 0', fontSize: '1.2rem', color: '#007bff' }}>{title}</h4>
