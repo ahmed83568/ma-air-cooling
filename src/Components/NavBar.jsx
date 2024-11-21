@@ -78,9 +78,9 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="whatsapp-button">
+            <button className="whatsapp-button ">
               <img
-                style={{ width: "2vw", marginRight: "0.5rem" }}
+                style={{ width: "2.5vw", marginRight: "0.3rem" }}
                 src={whatsapp}
                 alt="WhatsApp Icon"
               />
