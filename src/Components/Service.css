@@ -10,6 +10,7 @@
 .service-heading {
   text-align: center;
   font-size: 2.5rem;
+  font-family: 'Poppins', sans-serif; 
   margin-bottom: 2rem;
   color: #333;
   font-weight: bold;
@@ -56,6 +57,7 @@
 
 .service-title {
   font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif; 
   color: #007bff;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -64,6 +66,7 @@
 
 .service-description {
   font-size: 1rem;
+  font-family: 'Poppins', sans-serif; 
   color: #555;
   margin-bottom: 1rem;
   text-align: justify;
@@ -72,6 +75,7 @@
 
 .service-price {
   font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif; 
   font-weight: 700;
   color: #28a745;
   margin-bottom: 0.5rem;
@@ -80,6 +84,7 @@
 
 .service-additional {
   font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif; 
   color: #777;
   text-align: center;
   margin-bottom: 1.5rem;
@@ -92,6 +97,7 @@
   color: #fff;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
+  font-family: 'Poppins', sans-serif; 
   font-weight: 600;
   border: none;
   border-radius: 5px;
@@ -118,6 +124,7 @@
 
 .promo-section h3 {
   font-size: 1.8rem;
+  font-family: 'Poppins', sans-serif; 
   color: #333;
   margin-bottom: 1rem;
   font-weight: bold;
@@ -131,6 +138,7 @@
 
 .promo-section li {
   font-size: 1rem;
+  font-family: 'Poppins', sans-serif; 
   color: #555;
   margin: 0.5rem 0;
   text-align: left;
@@ -149,26 +157,32 @@
 @media (max-width: 768px) {
   .service-title {
       font-size: 1.3rem;
+      font-family: 'Poppins', sans-serif; 
   }
 
   .service-description {
       font-size: 0.95rem;
+      font-family: 'Poppins', sans-serif; 
   }
 
   .service-price {
       font-size: 1.1rem;
+      font-family: 'Poppins', sans-serif; 
   }
 
   .service-additional {
       font-size: 0.85rem;
+      font-family: 'Poppins', sans-serif; 
   }
 
   .promo-section h3 {
       font-size: 1.5rem;
+      font-family: 'Poppins', sans-serif; 
   }
 
   .promo-section li {
       font-size: 0.9rem;
+      font-family: 'Poppins', sans-serif; 
   }
 }
 
@@ -179,5 +193,6 @@
 
   .service-heading {
       font-size: 2rem;
+      font-family: 'Poppins', sans-serif; 
   }
 }

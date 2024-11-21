@@ -1,31 +1,35 @@
 import React from 'react';
 import './Service.css';
+import acser from "../Images/sevicing.jpeg" 
+import fridgeserv from "../Images/fridgeserv.jpeg" 
+import wasserv from "../Images/washserv.jpeg" 
+import oven from "../Images/oven.jpg" 
 
 const servicesData = [
   {
     title: "Air Conditioner (AC) Services",
-    image: "https://via.placeholder.com/300x200?text=AC",
+    image: acser,
     description: "Expert AC installation, repair, and maintenance services to keep your space cool and comfortable.",
     price: "Starting at ₹499",
     additional: "Includes gas refilling, filter cleaning, and performance checks.",
   },
   {
     title: "Refrigerator Services",
-    image: "https://via.placeholder.com/300x200?text=Refrigerator",
+    image: fridgeserv,
     description: "Reliable refrigerator repair and maintenance for all brands to ensure optimal cooling.",
     price: "Starting at ₹399",
     additional: "Covers thermostat checks, gas refilling, and compressor repairs.",
   },
   {
     title: "Washing Machine Services",
-    image: "https://via.placeholder.com/300x200?text=Washing+Machine",
+    image: wasserv,
     description: "Professional washing machine repair services to handle leaks, noise issues, and more.",
     price: "Starting at ₹349",
     additional: "Includes drum cleaning, belt replacements, and motor repairs.",
   },
   {
     title: "Other Appliances",
-    image: "https://via.placeholder.com/300x200?text=Other+Appliances",
+    image: oven,
     description: "Comprehensive services for microwaves, water heaters, and other home appliances.",
     price: "Contact for pricing",
     additional: "Covers parts replacement and general maintenance.",

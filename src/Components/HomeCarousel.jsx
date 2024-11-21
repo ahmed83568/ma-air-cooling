@@ -7,6 +7,7 @@ import washing from "../Images/washing.png"
 import fridge from "../Images/refigrator.jpg"
 import ac from "../Images/ac sevice.jpg"
 import carousel from "../Images/carousel.jpg"
+import acserv from "../Images/sevicing.jpeg"
 import caro from "../Images/caro.jpg"
 import caro1 from "../Images/caro1.jpg"
 import caro2 from "../Images/caro2.jpg"
@@ -28,7 +29,7 @@ const HomeCarousel = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={carousel}
+          src={acserv}
           alt="First slide"
         />
         <Carousel.Caption className="carousel-caption">

@@ -7,7 +7,7 @@
   import close from "../Images/cancel.png"
 import HomeChoose from './HomeChoose';
 import Sales from './Sales';
-import whatsapp from "../Images/whatsapp.jpeg"
+import whatsapp from "../Images/whatsapp.webp"
 
   const Home = () => {
     const [formData, setFormData] = useState({
@@ -105,10 +105,10 @@ import whatsapp from "../Images/whatsapp.jpeg"
               border: 'none', 
               borderRadius: '5px',
               zIndex: '100',
-              width:'10vw',
+              width:'60px',
               backgroundColor:'#428968',
               display:'flex',
-              alignItems:'center'
+              alignItems:'center',
             }}
           >
             <img

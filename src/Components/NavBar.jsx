@@ -34,9 +34,7 @@ const Navbar = () => {
             src={logo}
             alt="Company Logo"
             // style={{
-            //   width: "9vw",
-            //   height: "10vh",
-            //   // mixBlendMode: "darken",
+            //   mixBlendMode: "difference",
             // }}
           />
         </div>
@@ -101,7 +99,7 @@ const Navbar = () => {
       </div>
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="mobile-menu">
+        <div className="mobile-menu" style={{backgroundColor:' #007bff'}}>
           <Link to="/" className="mobile-link" onClick={toggleMenu}>
             Home
           </Link>
@@ -124,15 +122,18 @@ const Navbar = () => {
       overflow:hidden;
     }
     .nav-link {
-      color: #333;
+      color: #fff;
       text-decoration: none;
       font-size: 1rem;
+      font-family: 'Poppins', sans-serif; 
       font-weight: 500;
       padding: 0.5vw;
       transition: color 0.3s;
+      font-family: 'Poppins', sans-serif; 
+      
     }
     .nav-link:hover {
-      color: #fff;
+      color: #000;
     }
     .call-button, .whatsapp-button {
       background-color: #fff;
@@ -141,7 +142,9 @@ const Navbar = () => {
       border-radius: 5px;
       padding: 0.7vw 1.2vw;
       font-size: 1rem;
+      font-family: 'Poppins', sans-serif; 
       font-weight: 600;
+      font-family: 'Poppins', sans-serif; 
       cursor: pointer;
       animation: pulse 1.5s infinite alternate;
     }
@@ -150,7 +153,6 @@ const Navbar = () => {
       align-items: center;
       background-color: green;
       color: white;
-      {/* animation: pulse1 1.5s infinite alternate; */}
     }
     .whatsapp-button img {
       display: inline-block;
@@ -170,7 +172,6 @@ const Navbar = () => {
       border-radius: 5px;
     }
     .mobile-menu {
-      background-color: '#007bff';
       padding: 1rem;
       display: flex;
       flex-direction: column;
@@ -184,11 +185,15 @@ const Navbar = () => {
       color: #fff;
       text-decoration: none;
       font-size: 1.2rem;
+      font-family: 'Poppins', sans-serif; 
       padding: 1rem 0;
       text-align: center;
+      font-family: 'Poppins', sans-serif; 
+      
+
     }
     .mobile-link:hover {
-      color: #007bff;
+      color: #000;
     }
     @keyframes pulse {
       0% { transform: scale(1); }
@@ -197,7 +202,7 @@ const Navbar = () => {
     @media (min-width: 768px) {
       .desktop-nav { display: flex; }
       .hamburger-menu { display: none; }
-      .logo { width: 100.5px; }
+      .logo { width: 100.5px;}
     }
     @media (max-width: 768px) {
       .call-button { font-size: 0.8rem; padding: 2vw 3.5vw; }
