@@ -1,156 +1,99 @@
-// src/pages/Contact.jsx
-import React from "react";
+import React, { useState } from "react";
 
 const Contact = () => {
+  const [hoverIndex, setHoverIndex] = useState(null);
+
+  const handleMouseEnter = (index) => {
+    setHoverIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoverIndex(null);
+  };
+
+  const cardStyle = (index) => ({
+    background: hoverIndex === index ? "linear-gradient(135deg, #5D9CEC, #4A90E2)" : "#FFFFFF",
+    color: hoverIndex === index ? "#FFFFFF" : "#333333",
+    borderRadius: "12px",
+    boxShadow:
+      hoverIndex === index
+        ? "0px 10px 20px rgba(0, 0, 0, 0.2)"
+        : "0px 4px 8px rgba(0, 0, 0, 0.1)",
+    transform: hoverIndex === index ? "translateY(-5px)" : "translateY(0)",
+    transition: "all 0.3s ease",
+    padding: "20px",
+    maxWidth: "600px",
+    margin: "20px",
+    cursor: "pointer",
+    height:'60vh'
+  });
+
+  const locations = [
+    {
+      address:
+        "Shop No 6, Grit Residency, Jeejabai Bhosale Marg, opposite Indian Oil Nagar, ACC Nagar, Chedda Nagar, Mumbai, Maharashtra 400043",
+      contactPerson: "Osama Qureshi",
+      phone: "+91 7977852713",
+      mapSrc:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0041788801827!2d72.90930567536887!3d19.063553882138446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c617945c4245%3A0xc17bd48e1c13df79!2sM%20A%20Air%20Cooling!5e0!3m2!1sen!2sin!4v1731438153548!5m2!1sen!2sin",
+    },
+    {
+      address:
+        "Shop No 17, Plot No 1, Gajanand Colony, Lotus Colony, Shivaji Nagar, Mumbai, Maharashtra 400043",
+      contactPerson: "Ahmed Khan",
+      phone: "+91 9876543210",
+      mapSrc:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0280572875376!2d72.91527397536885!3d19.062503982139276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7004b6e5207%3A0x6eb219d325e1cb9d!2sM.A.AIR%20COOLING!5e0!3m2!1sen!2sin!4v1732972354455!5m2!1sen!2sin",
+    },
+  ];
+
   return (
-    <div style={{ width: "100% ", height: "100%", backgroundColor:'#F4F9FF' }}>
-      <h2 style={{textAlign:'center',paddingTop:'30px'}}>Contact Us</h2>
-      <div  style={{
-            width: "100%",
-            display: "flex",
-            alignItems:'center',
-            justifyContent: "space-between",
-            
-          }}>
-        {/* Contact Information */}
-        <div
-          style={{
-            width: "40vw",
-            margin:"30px",
-            marginTop:'60px',
-            border:'1px',
-            backgroundColor:'	#B0DAFF',
-            borderRadius:'10px'
-          }} >
-          <p style={{padding:'20px'}}>
-            <strong>Shop Address:</strong> Shop No 6, Grit Residency, Jeejabai
-            Bhosale Marg, opposite Indian Oil Nagar, ACC Nagar, Chedda Nagar,
-            Mumbai, Maharashtra 400043
-          </p>
-          <p style={{padding:'20px'}}>
-            <strong>Contact Person:</strong> Osama Qureshi
-          </p>
-          <p style={{padding:'20px'}}>
-            <strong> Mobile Number: </strong>
-            <a href="tel: +917977852713" style={{ textDecoration: "none", }}>
-               +91 7977852713
-            </a>
-          </p>
-        </div>
-
-        {/* Google Maps Embed */}
-        <div style={{ marginTop: "20px", width: "40vw" }}>
-          <h3 style={{fontSize:'1.3vw'}}>Our Location</h3>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0041788801827!2d72.90930567536887!3d19.063553882138446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c617945c4245%3A0xc17bd48e1c13df79!2sM%20A%20Air%20Cooling!5e0!3m2!1sen!2sin!4v1731438153548!5m2!1sen!2sin"
-            width="75%"
-            height="350"
-            frameBorder="0"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            aria-hidden="false"
-            tabIndex="0"
-            title="Google Map Location"
-          ></iframe>
-        </div>
-      </div>
-      <div  style={{
-            width: "100%",
-            display: "flex",
-            alignItems:'center',
-            justifyContent: "space-between",
-            
-          }}>
-        {/* Contact Information */}
-        <div
-          style={{
-            width: "40vw",
-            margin:"30px",
-            marginTop:'60px',
-            border:'1px',
-            backgroundColor:'	#B0DAFF',
-            borderRadius:'10px'
-          }} >
-          <p style={{padding:'20px'}}>
-            <strong>Shop Address:</strong> Shop No 6, Grit Residency, Jeejabai
-            Bhosale Marg, opposite Indian Oil Nagar, ACC Nagar, Chedda Nagar,
-            Mumbai, Maharashtra 400043
-          </p>
-          <p style={{padding:'20px'}}>
-            <strong>Contact Person:</strong> Osama Qureshi
-          </p>
-          <p style={{padding:'20px'}}>
-            <strong> Mobile Number: </strong>
-            <a href="tel: +917977852713" style={{ textDecoration: "none", }}>
-               +91 7977852713
-            </a>
-          </p>
-        </div>
-
-        {/* Google Maps Embed */}
-        <div style={{ marginTop: "20px", width: "40vw" }}>
-          <h3 style={{fontSize:'1.3vw'}}>Our Location</h3>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0041788801827!2d72.90930567536887!3d19.063553882138446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c617945c4245%3A0xc17bd48e1c13df79!2sM%20A%20Air%20Cooling!5e0!3m2!1sen!2sin!4v1731438153548!5m2!1sen!2sin"
-            width="75%"
-            height="350"
-            frameBorder="0"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            aria-hidden="false"
-            tabIndex="0"
-            title="Google Map Location"
-          ></iframe>
-        </div>
-      </div>
-      <div  style={{
-            width: "100%",
-            display: "flex",
-            alignItems:'center',
-            justifyContent: "space-between",
-            
-          }}>
-        {/* Contact Information */}
-        <div
-          style={{
-            width: "40vw",
-            margin:"30px",
-            marginTop:'60px',
-            border:'1px',
-            backgroundColor:'	#B0DAFF',
-            borderRadius:'10px'
-          }} >
-          <p style={{padding:'20px'}}>
-            <strong>Shop Address:</strong> Shop No 6, Grit Residency, Jeejabai
-            Bhosale Marg, opposite Indian Oil Nagar, ACC Nagar, Chedda Nagar,
-            Mumbai, Maharashtra 400043
-          </p>
-          <p style={{padding:'20px'}}>
-            <strong>Contact Person:</strong> Osama Qureshi
-          </p>
-          <p style={{padding:'20px'}}>
-            <strong> Mobile Number: </strong>
-            <a href="tel: +917977852713" style={{ textDecoration: "none", }}>
-               +91 7977852713
-            </a>
-          </p>
-        </div>
-
-        {/* Google Maps Embed */}
-        <div style={{ marginTop: "20px", width: "40vw" }}>
-          <h3 style={{fontSize:'1.3vw'}}>Our Location</h3>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0041788801827!2d72.90930567536887!3d19.063553882138446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c617945c4245%3A0xc17bd48e1c13df79!2sM%20A%20Air%20Cooling!5e0!3m2!1sen!2sin!4v1731438153548!5m2!1sen!2sin"
-            width="75%"
-            height="350"
-            frameBorder="0"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            aria-hidden="false"
-            tabIndex="0"
-            title="Google Map Location"
-          ></iframe>
-        </div>
+    <div style={{ backgroundColor: "#F4F9FF", minHeight: "100vh", padding: "30px 0" }}>
+      <h2 style={{ textAlign: "center", fontSize: "2rem", marginBottom: "20px" }}>Contact Us</h2>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          alignItems: "flex-start",
+          gap: "20px",
+        }}
+      >
+        {locations.map((location, index) => (
+          <div
+            key={index}
+            style={cardStyle(index)}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
+          >
+            <h3 style={{ fontSize: "1.5rem", marginBottom: "10px" }}>{location.contactPerson}</h3>
+            <p>
+              <strong>Address:</strong> {location.address}
+            </p>
+            <p>
+              <strong>Phone:</strong>{" "}
+              <a href={`tel:${location.phone}`} style={{ color: "inherit", textDecoration: "none" }}>
+                {location.phone}
+              </a>
+            </p>
+            <iframe
+              src={location.mapSrc}
+              width="100%"
+              height="200"
+              style={{
+                border: "none",
+                borderRadius: "8px",
+                marginTop: "15px",
+                filter: hoverIndex === index ? "brightness(1.1)" : "brightness(1)",
+                transition: "filter 0.3s ease",
+              }}
+              allowFullScreen=""
+              aria-hidden="false"
+              tabIndex="0"
+              title={`Location ${index + 1}`}
+            ></iframe>
+          </div>
+        ))}
       </div>
     </div>
   );
