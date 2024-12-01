@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../Images/logo.jpg";
-import whatsapp from "../Images/whatsapp.webp";
+import whatsapp from "../Images/whats.webp";
 
 
 const Navbar = () => {
@@ -66,9 +66,9 @@ const Navbar = () => {
 
         {/* Call Us and WhatsApp Us Buttons */}
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',}}>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <a href={`tel:${phoneNumber}`} style={{ marginRight: "1rem" }}>
-            <button className="call-button">Call Us</button>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <a href={`tel:${phoneNumber}`} style={{ marginRight: "1rem",textDecoration: "none" }}>
+            <button className="call-button">📞 Call Us</button>
           </a>
           <a
             style={{ textDecoration: "none" }}
@@ -76,12 +76,8 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="whatsapp-button ">
-              <img
-                style={{ width: "2.5vw", marginRight: "0.3rem" }}
-                src={whatsapp}
-                alt="WhatsApp Icon"
-              />
+            <button className="whatsapp-button">
+              <img className="whatsapp-icon" src={whatsapp} alt="WhatsApp Icon" />
               WhatsApp Us
             </button>
           </a>
@@ -135,25 +131,35 @@ const Navbar = () => {
     .nav-link:hover {
       color: #000;
     }
-    .call-button, .whatsapp-button {
-      background-color: #fff;
-      color: #000;
-      border: none;
-      border-radius: 5px;
-      padding: 0.7vw 1.2vw;
-      font-size: 1rem;
-      font-family: 'Poppins', sans-serif; 
-      font-weight: 600;
-      font-family: 'Poppins', sans-serif; 
-      cursor: pointer;
-      animation: pulse 1.5s infinite alternate;
-    }
-    .whatsapp-button {
-      display: flex;
-      align-items: center;
-      background-color: green;
-      color: white;
-    }
+   .call-button, .whatsapp-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: linear-gradient(45deg, #4CAF50, #1E88E5);
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            border: none;
+            border-radius: 25px;
+            padding: 0.7rem 1.5rem;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+          }
+          .call-button:hover, .whatsapp-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+          }
+          .whatsapp-button {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+          }
+          .whatsapp-icon {
+            width: 20px;
+             border-radius: 10px;
+            height: 20px;
+          }
     .whatsapp-button img {
       display: inline-block;
       vertical-align: middle;
@@ -175,7 +181,7 @@ const Navbar = () => {
       padding: 1rem;
       display: flex;
       flex-direction: column;
-      position: absolute;
+      position: fixed;
       top: 10vh;
       width: 100%;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -207,7 +213,7 @@ const Navbar = () => {
     @media (max-width: 768px) {
       .call-button { font-size: 0.8rem; padding: 2vw 3.5vw; }
       .whatsapp-button { display: none; } /* Hide WhatsApp button on screens smaller than 768px */
-      .logo { width: 91px; }
+      .logo { width: 100px; }
     }
   `}
 </style>

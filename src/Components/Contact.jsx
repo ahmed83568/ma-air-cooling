@@ -25,7 +25,7 @@ const Contact = () => {
     maxWidth: "600px",
     margin: "20px",
     cursor: "pointer",
-    height:'60vh'
+    height:'70vh'
   });
 
   const locations = [
@@ -70,9 +70,9 @@ const Contact = () => {
             <p>
               <strong>Address:</strong> {location.address}
             </p>
-            <p>
+            <p style={{}}>
               <strong>Phone:</strong>{" "}
-              <a href={`tel:${location.phone}`} style={{ color: "inherit", textDecoration: "none" }}>
+              <a href={`tel:${location.phone}`} style={{ color: "inherit", textDecoration: "none",fontWeight:'bolder',padding:'1vw 1.8vw',backgroundColor:hoverIndex === index ?'#fff': '#000',borderRadius:'15px',color:hoverIndex === index ? 'black':'white' }}>
                 {location.phone}
               </a>
             </p>
@@ -86,6 +86,7 @@ const Contact = () => {
                 marginTop: "15px",
                 filter: hoverIndex === index ? "brightness(1.1)" : "brightness(1)",
                 transition: "filter 0.3s ease",
+                height:'43vh'
               }}
               allowFullScreen=""
               aria-hidden="false"

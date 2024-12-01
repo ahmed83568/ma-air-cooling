@@ -9,3 +9,147 @@
 .choose_us:hover{
     transform: scale(1.05);
 }
+.any-query-button {
+    padding: 1vw 1.5vw;
+    background-color: #007bff;
+    color: white;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    z-index: 100;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .any-query-button:hover {
+    transform: scale(1.1);
+  }
+  @media (max-width: 768px) {
+    .any-query-button {
+      font-size: 1.2rem;
+      padding: 2vw 3vw;
+      bottom: 3%;
+      right: 3%;
+    }
+    .responsive-form {
+        padding: 1.5rem;
+      }
+    
+      .responsive-form input, 
+      .responsive-form textarea {
+        font-size: 0.9rem;
+      }
+    
+      .responsive-form .submit-button {
+        font-size: 0.9rem;
+        padding: 0.65rem;
+      }
+      .responsive-form input,
+      .responsive-form textarea {
+        font-size: 0.9rem;
+      }
+    
+      .responsive-form .submit-button {
+        font-size: 0.9rem;
+        padding: 0.65rem;
+      }
+}
+@media (max-width: 480px) {
+    .any-query-button {
+      font-size: 1.2rem;
+      padding: 2vw 4.5vw;
+      bottom: 3%;
+      right: 2%;
+    }
+    .responsive-form{
+        padding: 0.5rem;
+        height: auto;
+
+    }
+    .responsive-form label {
+        font-size: 0.9rem;
+      }
+    
+      .responsive-form input,
+      .responsive-form textarea {
+        font-size: 0.85rem;
+        width: 90%;
+      }
+    
+      .responsive-form .submit-button {
+        font-size: 0.85rem;
+        padding: 0.75rem 1.5rem;
+        width: 50%;
+        
+      }
+    
+}  
+/* Responsive Modal Form Styles */
+.responsive-form .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .responsive-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .responsive-form input,
+  .responsive-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #a5bad111;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .responsive-form input:focus,
+  .responsive-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  }
+  
+  .responsive-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .responsive-form .submit-button {
+    /* width: 0%; */
+    padding: .75vw 2.4vw;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .responsive-form .submit-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .responsive-form .submit-button:active {
+    background-color: #004494;
+    transform: scale(0.95);
+  }
+  
+
+
+  
+  
+
+  
