@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Home.css";
 import HomeCarousel from "./HomeCarousel";
 import { db } from "../../src/firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
+import LocomotiveScroll from "locomotive-scroll";
+import "locomotive-scroll/dist/locomotive-scroll.css";
 
 import close from "../Images/cancel.png";
 import HomeChoose from "./HomeChoose";
 import Sales from "./Sales";
 import whatsapp from "../Images/whats.webp";
 import Footer from "./Footer";
+
+
 
 const Home = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +21,7 @@ const Home = () => {
     query: "",
     phone: "",
   });
+  const scrollRef = useRef(null);
 
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
@@ -37,6 +42,21 @@ const Home = () => {
     // Cleanup listener on unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+      smoothMobile: true,
+      inertia: 0.8,
+    });
+  
+    // Cleanup
+    return () => {
+      scroll.destroy();
+    };
+  }, []);
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,7 +88,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div data-scroll-container ref={scrollRef}>
       <button
         onClick={handleQueryClick}
         className="any-query-button"

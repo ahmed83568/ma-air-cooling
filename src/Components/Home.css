@@ -29,6 +29,21 @@
   .any-query-button:hover {
     transform: scale(1.1);
   }
+  /* [data-scroll-container] {
+    overflow: hidden;
+  }
+  
+  .is-reveal {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.7s ease-out;
+  }
+  
+  [data-scroll] .is-reveal {
+    opacity: 1;
+    transform: translateY(0);
+  } */
+  
   @media (max-width: 768px) {
     .any-query-button {
       font-size: 1.2rem;
