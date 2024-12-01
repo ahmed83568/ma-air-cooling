@@ -32,16 +32,16 @@ const Contact = () => {
     {
       address:
         "Shop No 6, Grit Residency, Jeejabai Bhosale Marg, opposite Indian Oil Nagar, ACC Nagar, Chedda Nagar, Mumbai, Maharashtra 400043",
-      contactPerson: "Osama Qureshi",
-      phone: "+91 7977852713",
+      contactPerson: "Mohd Irfan",
+      phone: "+91 9172136880",
       mapSrc:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0041788801827!2d72.90930567536887!3d19.063553882138446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c617945c4245%3A0xc17bd48e1c13df79!2sM%20A%20Air%20Cooling!5e0!3m2!1sen!2sin!4v1731438153548!5m2!1sen!2sin",
     },
     {
       address:
         "Shop No 17, Plot No 1, Gajanand Colony, Lotus Colony, Shivaji Nagar, Mumbai, Maharashtra 400043",
-      contactPerson: "Ahmed Khan",
-      phone: "+91 9876543210",
+      contactPerson: "Mohd Imran",
+      phone: "+91 9022968863",
       mapSrc:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0280572875376!2d72.91527397536885!3d19.062503982139276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7004b6e5207%3A0x6eb219d325e1cb9d!2sM.A.AIR%20COOLING!5e0!3m2!1sen!2sin!4v1732972354455!5m2!1sen!2sin",
     },

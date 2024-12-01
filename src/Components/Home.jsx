@@ -11,6 +11,7 @@ import HomeChoose from "./HomeChoose";
 import Sales from "./Sales";
 import whatsapp from "../Images/whats.webp";
 import Footer from "./Footer";
+import Service from "./Service";
 
 
 
@@ -261,12 +262,13 @@ const Home = () => {
           parts.
         </p>
       </div>
+      <Service/>
 
       {/* Why Choose Us Section */}
-      <HomeChoose />
 
       {/* Sales and Services Section */}
       <Sales />
+      <HomeChoose />
 
       {/* Footer */}
       <Footer/>
