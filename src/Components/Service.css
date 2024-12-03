@@ -18,6 +18,8 @@
   font-family: 'Poppins', sans-serif;
   color: #222;
   margin-bottom: 1rem;
+  font-weight: 700;
+
 }
 
 .hero-subheading {
@@ -52,7 +54,7 @@
 }
 
 /* Service Card */
-.service-card {
+.service-card1 {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -62,7 +64,7 @@
   flex-direction: column;
 }
 
-.service-card:hover {
+.service-card1:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
@@ -186,6 +188,13 @@
     font-size: 1.2rem;
   }
 
+  .hero-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .hero-subheading {
+    font-size: 1rem;
+  }
   .service-description,
   .service-price,
   .promo-section h3,

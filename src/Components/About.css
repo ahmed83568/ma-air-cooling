@@ -3,94 +3,166 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: #333;
-  line-height: 1.6;
+  line-height: 1.8;
+  background-color: #f8f9fa;
 }
 
 .about-section {
   max-width: 1440px;
   margin: auto;
   padding: 20px;
-}
-
-.about-banner {
-  background: linear-gradient(135deg, #0047ab, #3b82f6);
-  color: #fff;
-  text-align: center;
-  padding: 60px 20px;
-  border-radius: 12px;
-  margin-bottom: 40px;
   animation: fadeIn 1.2s ease-in-out;
 }
 
+.about-banner {
+  background: linear-gradient(135deg, #0066cc, #00ccff);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  animation: bannerSlide 2s infinite alternate;
+}
+
+
 .about-banner h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 20px;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .about-banner p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+  font-size: 1.3rem;
+  margin-bottom: 40px;
 }
 
 .cta-button {
   background-color: #ff6b6b;
   color: #fff;
-  font-size: 1rem;
-  padding: 10px 20px;
+  font-size: 1.2rem;
+  padding: 12px 25px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 
 .cta-button:hover {
   transform: scale(1.1);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  background-color: #e64545;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
   color: #0056b3;
-  margin-top: 30px;
+  font-size: 2.2rem;
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #00ccff;
+  margin: 10px auto 0;
+  border-radius: 4px;
 }
 
 .services-grid,
-.team-grid,
-.awards-grid {
+.team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
   margin-top: 20px;
 }
 
 .service-card,
-.team-card,
-.award-card {
-  background: white;
+.team-card
+ {
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover,
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #f0faff, #e0f7fa);
+}
+
+.service-card::before,
+.team-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 204, 255, 0.15) 30%, transparent 70%);
+  transform: rotate(45deg);
+  transition: opacity 0.3s;
+  z-index: 0;
+}
+
+.service-card:hover::before,
+.team-card:hover::before {
+  opacity: 1;
+}
+.award-card{
+  
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 400px;
+  height: 350px;
+
 }
 
 .team-card img,
 .award-card img {
   width: 100%;
   border-radius: 10px;
+  margin-bottom: 15px;
+  z-index: 1;
 }
 
 .testimonials-slider {
   display: flex;
-  overflow-x: auto;
   gap: 20px;
+  padding: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
 }
 
 .testimonial-card {
   min-width: 300px;
-  background: #f9f9f9;
+  background: #f1f1f1;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  position: relative;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.testimonial-card:hover {
+  background-color: #e9f7fd;
+  transform: scale(1.05);
 }
 
 .testimonial-card p {
@@ -101,30 +173,132 @@ h2 {
   text-align: right;
   color: #0056b3;
   margin-top: 10px;
+  font-weight: bold;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .services-grid,
-  .team-grid,
-  .awards-grid {
-    grid-template-columns: 1fr 1fr;
+.contact-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #e9f7fd;
+  border-radius: 10px;
+  margin-top: 40px;
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+}
+.awards-grid{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mission-section {
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  margin: 20px auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 1375px; /* Center the section for large screens */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.mission-section h2 {
+  font-size: 2.4rem;
+  color: #0056b3;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.mission-section p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.mission-section strong {
+  color: #0066cc;
+}
+
+.mission-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bannerSlide {
+  from {
+    background: linear-gradient(135deg, #0066cc, #00ccff);
+  }
+  to {
+    background: linear-gradient(135deg, #00ccff, #0066cc);
   }
 }
 
 @media (max-width: 768px) {
-  .services-grid,
-  .team-grid,
-  .awards-grid {
-    grid-template-columns: 1fr;
-  }
-
   .about-banner h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+  .awards-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
   }
 
   .cta-button {
-    font-size: 0.9rem;
-    padding: 10px 25px;
+    font-size: 1rem;
   }
+  .mission-section {
+    padding: 20px;
+    text-align: left; /* Align text to left for smaller screens */
+  }
+
+  .mission-section h2 {
+    font-size: 2rem;
+    text-align: center; /* Keep the heading centered */
+  }
+
+  .mission-section p {
+    font-size: 1rem;
+  }
+
 }

@@ -31,7 +31,7 @@ const Contact = () => {
   const locations = [
     {
       address:
-        "Shop No 6, Grit Residency, Jeejabai Bhosale Marg, opposite Indian Oil Nagar, ACC Nagar, Chedda Nagar, Mumbai, Maharashtra 400043",
+        "Shop No 01, SHANKARA COLONY, Jeejabai Bhosale Marg, opposite Indian Oil Nagar, ACC Nagar, Chedda Nagar, Mumbai, Maharashtra 400043",
       contactPerson: "Mohd Irfan",
       phone: "+91 9172136880",
       mapSrc:
@@ -41,7 +41,7 @@ const Contact = () => {
       address:
         "Shop No 17, Plot No 1, Gajanand Colony, Lotus Colony, Shivaji Nagar, Mumbai, Maharashtra 400043",
       contactPerson: "Mohd Imran",
-      phone: "+91 9022968863",
+      phone: "+91 9172136880",
       mapSrc:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0280572875376!2d72.91527397536885!3d19.062503982139276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7004b6e5207%3A0x6eb219d325e1cb9d!2sM.A.AIR%20COOLING!5e0!3m2!1sen!2sin!4v1732972354455!5m2!1sen!2sin",
     },
@@ -72,7 +72,7 @@ const Contact = () => {
             </p>
             <p style={{}}>
               <strong>Phone:</strong>{" "}
-              <a href={`tel:${location.phone}`} style={{ color: "inherit", textDecoration: "none",fontWeight:'bolder',padding:'1vw 1.8vw',backgroundColor:hoverIndex === index ?'#fff': '#000',borderRadius:'15px',color:hoverIndex === index ? 'black':'white' }}>
+              <a href={`tel:${location.phone}`} style={{ color: "inherit", textDecoration: "none",fontWeight:'bolder',padding:'10px 16px',backgroundColor:hoverIndex === index ?'#fff': '#000',borderRadius:'25px',color:hoverIndex === index ? 'black':'white' }}>
                 {location.phone}
               </a>
             </p>

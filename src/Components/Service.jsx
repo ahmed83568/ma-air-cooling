@@ -51,7 +51,7 @@ const Service = () => {
       <h2 className="service-heading">Our Services</h2>
       <div className="service-grid">
         {servicesData.map((service, index) => (
-          <div className="service-card" key={index}>
+          <div className="service-card1" key={index}>
             <img src={service.image} alt={service.title} className="service-image" />
             <div className="service-content">
               <h3 className="service-title">{service.title}</h3>

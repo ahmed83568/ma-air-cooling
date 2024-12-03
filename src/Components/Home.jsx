@@ -89,64 +89,11 @@ const Home = () => {
   };
 
   return (
-    <div data-scroll-container ref={scrollRef}>
-      <button
-        onClick={handleQueryClick}
-        className="any-query-button"
-        onMouseEnter={(e) => (e.target.style.transform = "scale(1.1)")}
-        onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
-      >
-        Any Query?
-      </button>
+    <>
 
-      {isWhatsAppVisible && (
-        <a
-          style={{ textDecoration: "none" }}
-          href={`https://wa.me/${phoneNumber}?text=Hi%2C%20I%20have%20a%20query%20regarding%20your%20services`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button
-            className="whatsapp-button1"
-            style={{
-              position: "fixed",
-              top: "15%",
-              left: "2%",
-              outline: "none",
-              border: "none",
-              borderRadius: "50%",
-              zIndex: "100",
-              width: "60px",
-              height: "60px",
-              backgroundColor: "#25D366",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
-              cursor: "pointer",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.transform = "scale(1.2)";
-              e.target.style.boxShadow = "0px 6px 12px rgba(0, 0, 0, 0.3)";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = "scale(1)";
-              e.target.style.boxShadow = "0px 4px 8px rgba(0, 0, 0, 0.2)";
-            }}
-          >
-            <img
-              style={{
-                width: "70%",
-                filter: "brightness(1.5)",
-                borderRadius: "18px",
-              }}
-              src={whatsapp}
-              alt="WhatsApp Icon"
-            />
-          </button>
-        </a>
-      )}
+   
+    <div data-scroll-container ref={scrollRef}>
+
 
       {isFormVisible && (
         <div
@@ -253,11 +200,11 @@ const Home = () => {
 
       <HomeCarousel />
 
-      <div style={{ marginTop: "3vh",padding:'2vw 2.5vw', background: "linear-gradient(135deg, #0047ab, #3b82f6)",width:'90%',margin:'10px auto',borderRadius:'20px' }}>
-        <h1 style={{ textAlign: "center", fontSize: "calc(10px + 3vw)",fontWeight:'bold',color:'#fff',textTransform:'uppercase' }}>
+      <div style={{ padding:'2vw 2.5vw', background: "linear-gradient(135deg, #0047ab, #3b82f6)",width:'90%',margin:'3vh auto',borderRadius:'20px' }}>
+        <h1 style={{ textAlign: "center", fontSize: "calc(15px + 2vw)",fontWeight:'bold',color:'#fff',textTransform:'uppercase' }}>
           Welcome to M.A.Air Cooling Sales & Services
         </h1>
-        <p style={{ textAlign: "center", fontSize: "calc(8px + 1.5vw)",textTransform:'uppercase',color:'#fff' }}>
+        <p style={{ textAlign: "center", fontSize: "calc(8px + 1.2vw)",textTransform:'uppercase',color:'#fff' }}>
           Your trusted solution for air cooling sales, services, and spare
           parts.
         </p>
@@ -273,6 +220,64 @@ const Home = () => {
       {/* Footer */}
       <Footer/>
     </div>
+    <button
+        onClick={handleQueryClick}
+        className="any-query-button"
+        onMouseEnter={(e) => (e.target.style.transform = "scale(1.1)")}
+        onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
+      >
+        Any Query?
+      </button>
+
+      {isWhatsAppVisible && (
+        <a
+          style={{ textDecoration: "none" }}
+          href={`https://wa.me/${phoneNumber}?text=Hi%2C%20I%20have%20a%20query%20regarding%20your%20services`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button
+            className="whatsapp-button1"
+            style={{
+              position: "fixed",
+              top: "15%",
+              left: "2%",
+              outline: "none",
+              border: "none",
+              borderRadius: "50%",
+              zIndex: "100",
+              width: "60px",
+              height: "60px",
+              backgroundColor: "#25D366",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+              cursor: "pointer",
+              transition: "transform 0.3s ease, box-shadow 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = "scale(1.2)";
+              e.target.style.boxShadow = "0px 6px 12px rgba(0, 0, 0, 0.3)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = "scale(1)";
+              e.target.style.boxShadow = "0px 4px 8px rgba(0, 0, 0, 0.2)";
+            }}
+          >
+            <img
+              style={{
+                width: "70%",
+                filter: "brightness(1.5)",
+                borderRadius: "18px",
+              }}
+              src={whatsapp}
+              alt="WhatsApp Icon"
+            />
+          </button>
+        </a>
+      )}
+      </>
   );
 };
 
