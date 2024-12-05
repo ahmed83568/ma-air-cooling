@@ -25,7 +25,6 @@ const Contact = () => {
     maxWidth: "600px",
     margin: "20px",
     cursor: "pointer",
-    height:'70vh'
   });
 
   const locations = [

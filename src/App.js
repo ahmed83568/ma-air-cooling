@@ -6,9 +6,11 @@ import Home from './Components/Home';
 import About from './Components/About';
 import Contact from './Components/Contact';
 import Service from './Components/Service';
+import ScrollToTop from './Components/ScrollToTop';
 
 const App = () => (
   <Router>
+  <ScrollToTop/>
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />

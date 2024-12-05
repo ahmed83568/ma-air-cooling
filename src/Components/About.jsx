@@ -66,7 +66,7 @@ const About = () => (
               “The team at M.A.Air Cooling exceeded our expectations with their innovative solutions and 
               exceptional customer service.”
             </p>
-            <h3>- Mohd Irfan</h3>
+            <h3>- Arbaz Shaikh</h3>
           </div>
           <div className="testimonial-card">
             <p>
