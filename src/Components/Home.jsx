@@ -12,6 +12,7 @@ import Sales from "./Sales";
 import whatsapp from "../Images/whats.webp";
 import Footer from "./Footer";
 import Service from "./Service";
+import { gsap } from "gsap/gsap-core";
 
 
 
@@ -42,6 +43,25 @@ const Home = () => {
 
     // Cleanup listener on unmount
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  
+  useEffect(() => {
+    gsap.fromTo(
+      ".hero-card",
+      { opacity: 0, y: -100, },
+      { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" }
+    );
+  
+    gsap.fromTo(
+      ".hero-h1",
+      { opacity: 0, y: -100 },
+      { opacity: 1, y: 0, duration: 1.2, ease: "power2.out", delay: 0.3 }
+    );
+    gsap.fromTo(
+      ".hero-p",
+      { opacity: 0, y: -100 },
+      { opacity: 1, y: 0, duration: 1.2, ease: "power2.out", delay: 0.3 }
+    );
   }, []);
 
   useEffect(() => {
@@ -200,11 +220,11 @@ const Home = () => {
 
       <HomeCarousel />
 
-      <div style={{ padding:'2vw 2.5vw', background: "linear-gradient(135deg, #0047ab, #3b82f6)",width:'90%',margin:'3vh auto',borderRadius:'20px' }}>
-        <h1 style={{ textAlign: "center", fontSize: "calc(15px + 2vw)",fontWeight:'bold',color:'#fff',textTransform:'uppercase' }}>
+      <div className="hero-card" style={{ padding:'2vw 2.5vw', background: "linear-gradient(135deg, #0047ab, #3b82f6)",width:'90%',margin:'3vh auto',borderRadius:'20px' }}>
+        <h1  className="hero-h1" style={{ textAlign: "center", fontSize: "calc(15px + 2vw)",fontWeight:'bold',color:'#fff',textTransform:'uppercase' }}>
           Welcome to M.A.Air Cooling Sales & Services
         </h1>
-        <p style={{ textAlign: "center", fontSize: "calc(8px + 1.2vw)",textTransform:'uppercase',color:'#fff' }}>
+        <p  className="hero-p"  style={{ textAlign: "center", fontSize: "calc(8px + 1.2vw)",textTransform:'uppercase',color:'#fff' }}>
           Your trusted solution for air cooling sales, services, and spare
           parts.
         </p>

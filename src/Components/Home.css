@@ -31,7 +31,6 @@
   }
   [data-scroll-container] {
     overflow: hidden;
-    position: relative;
   }
   
   .is-reveal {

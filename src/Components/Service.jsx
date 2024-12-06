@@ -4,6 +4,9 @@ import acser from '../Images/sevicing.jpeg';
 import fridgeserv from '../Images/fridgeserv.jpeg';
 import wasserv from '../Images/washserv.jpeg';
 import oven from '../Images/oven.jpg';
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
+
 
 const servicesData = [
   {
@@ -39,6 +42,59 @@ const servicesData = [
 const Service = () => {
   const phoneNumber = process.env.REACT_APP_PHONE_NUMBER;
 
+  useEffect(() => {
+    gsap.fromTo(
+      ".hero-heading",
+      { opacity: 0, y: -50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+    );
+  
+    gsap.fromTo(
+      ".hero-subheading",
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1.2, ease: "power2.out", delay: 0.3 }
+    );
+  }, []);
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".service-card1",
+      { opacity: 0,scale:.3, },
+      { opacity: 1, scale:1,duration: 1.2, stagger: .5, ease: "power2.out" }
+    );
+  }, []);
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".promo-section",
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out", delay: 3.5 }
+    );
+  }, []);
+  
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    if (mq.matches) {
+      gsap.fromTo(
+        ".service-card1",
+        { x: -200, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1.6, stagger: 0.5, ease: "power2.out" }
+      );
+      gsap.fromTo(
+        ".promo-section",
+        { opacity: 0, X: -100 },
+        { opacity: 1, X: 0, duration: 2, ease: "power2.out", delay: 0.5 }
+      );
+    }
+  }, []);
+
+  const handleButtonHover = (e, scale) => {
+    gsap.to(e.target, { scale, duration: 0.2 });
+  };
+  
+  
+
   return (
     <div className="service-container">
       <header className="hero-section">
@@ -59,7 +115,8 @@ const Service = () => {
               <p className="service-price">{service.price}</p>
               <p className="service-additional">{service.additional}</p>
               <a href={`tel:${phoneNumber}`} style={{ marginRight: "auto",textDecoration: "none",display:'flex',alignItems:'center' }}>
-            <button className="call-button">📞 Call Us</button>
+            <button className="call-button"   onMouseEnter={(e) => handleButtonHover(e, 1.1)}
+  onMouseLeave={(e) => handleButtonHover(e, 1)}>📞 Call Us</button>
              </a>
             </div>
           </div>

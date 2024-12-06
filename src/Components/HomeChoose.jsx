@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './HomeChoose.css';
+import { use } from 'react';
+import { gsap } from 'gsap/gsap-core';
 
 const HomeChoose = () => {
+
+  useEffect(()=>{
+    gsap.fromTo(".home-choose-section",{
+      opacity:0,x:-300,
+    },{
+      opacity:1,delay:6,duration:1.5,x:0,
+    })
+  },[])
   return (
     <section className="home-choose-section">
       <h2 className="section-title">Why Choose Us?</h2>

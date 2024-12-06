@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState,useEffect, useRef } from "react";
+import { gsap } from "gsap";
+
 import { Link } from "react-router-dom";
 import logo from "../Images/logo.jpg";
 import whatsapp from "../Images/whats.webp";
@@ -7,8 +9,44 @@ import whatsapp from "../Images/whats.webp";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const phoneNumber = process.env.REACT_APP_PHONE_NUMBER;
+  const linksRef = useRef([]);
+  const buttonsRef = useRef([]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  useEffect(() => {
+    // Animate desktop navigation links
+    gsap.fromTo(
+      linksRef.current,
+      { opacity: 0, y: -40 },
+      { opacity: 1, y: 0, duration: 1, stagger: 0.3, ease: "power4.out" }
+    );
+    gsap.fromTo('.logo',{ opacity: 0.3, scale:.2, },
+      { opacity: 1,scale:1, duration: 1.2, ease: "power4.out" })
+
+    // Animate buttons
+    gsap.fromTo(
+      buttonsRef.current,
+      { opacity: 0, scale: 0.8 },
+      { opacity: 1, scale: 1, duration: 0.8, delay: 0.5, ease: "elastic.out(1, 0.3)" }
+    );
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      gsap.fromTo(
+        ".mobile-link",
+        { x: -50, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.5, stagger: 0.2, ease: "power2.out" }
+      );
+    }
+  }, [isMenuOpen]);
+
+  const animateButton = (e, scale) => {
+    gsap.to(e.target, { scale, duration: 0.2 });
+  };
+
+  
 
   return (
     <>
@@ -49,18 +87,16 @@ const Navbar = () => {
               width: "100%",
             }}
           >
-            <Link to="/" className="nav-link">
-              Home
-            </Link>
-            <Link to="/about" className="nav-link">
-              About
-            </Link>
-            <Link to="/services" className="nav-link">
-              Services
-            </Link>
-            <Link to="/contact" className="nav-link">
-              Contact Us
-            </Link>
+           {["Home", "About", "Services", "Contact Us"].map((link, index) => (
+              <Link
+                key={link}
+                to={`/${link.toLowerCase().replace(" ", "")}`}
+                className="nav-link"
+                ref={(el) => (linksRef.current[index] = el)}
+              >
+                {link}
+              </Link>
+            ))}
           </nav>
         </div>
 
@@ -68,7 +104,7 @@ const Navbar = () => {
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',}}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <a href={`tel:${phoneNumber}`} style={{ marginRight: "1rem",textDecoration: "none" }}>
-            <button className="call-button">📞 Call Us</button>
+            <button className="call-button"   ref={(el) => (buttonsRef.current[0] = el)}>📞 Call Us</button>
           </a>
           <a
             style={{ textDecoration: "none" }}
@@ -76,7 +112,7 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="whatsapp-button">
+            <button className="whatsapp-button"  ref={(el) => (buttonsRef.current[1] = el)}>
               <img className="whatsapp-icon" src={whatsapp} alt="WhatsApp Icon" />
               WhatsApp Us
             </button>
@@ -105,7 +141,7 @@ const Navbar = () => {
           <Link to="/services" className="mobile-link" onClick={toggleMenu}>
             Services
           </Link>
-          <Link to="/contact" className="mobile-link" onClick={toggleMenu}>
+          <Link to="/contactus" className="mobile-link" onClick={toggleMenu}>
             Contact Us
           </Link>
         </div>
@@ -122,7 +158,7 @@ const Navbar = () => {
       text-decoration: none;
       font-size: 1rem;
       font-family: 'Poppins', sans-serif; 
-      font-weight: 500;
+      font-weight: 600;
       padding: 0.5vw;
       transition: color 0.3s;
       font-family: 'Poppins', sans-serif; 
