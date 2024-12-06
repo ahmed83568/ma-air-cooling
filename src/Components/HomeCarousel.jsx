@@ -3,10 +3,11 @@ import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import './HomeCarousel.css'; 
 import ac from "../Images/ac sevice.jpg";
-import acserv from "../Images/sevicing.jpeg";
+import acserv from "../Images/servicing.jpeg";
 import caro from "../Images/caro.jpg";
 import caro1 from "../Images/caro1.jpg";
 import caro2 from "../Images/caro2.jpg";
+import video from "../Images/video.mp4"
 
 const HomeCarousel = () => {
   return (

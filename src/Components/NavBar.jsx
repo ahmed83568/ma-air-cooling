@@ -21,8 +21,8 @@ const Navbar = () => {
       { opacity: 0, y: -40 },
       { opacity: 1, y: 0, duration: 1, stagger: 0.3, ease: "power4.out" }
     );
-    gsap.fromTo('.logo',{ opacity: 0.3, scale:.2, },
-      { opacity: 1,scale:1, duration: 1.2, ease: "power4.out" })
+    gsap.fromTo('.logo',{ opacity: 0.3, scale:.2,y:-100 },
+      { opacity: 1,scale:1, duration: 1.2, y:0,ease: "power4.out" })
 
     // Animate buttons
     gsap.fromTo(

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import insta from "../Images/insta.webp"
+import insta from "../Images/insta.webp";
 import "./Footer.css";
 
 const Footer = () => (
@@ -23,7 +23,7 @@ const Footer = () => (
             <Link to="/services">Services</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contactus">Contact</Link>
           </li>
         </ul>
       </div>
@@ -32,7 +32,7 @@ const Footer = () => (
       <div className="footer-contact">
         <h4>Contact Us</h4>
         <p>Phone: +91 9172136880</p>
-        <p>Email: info@maaircooling.com</p>
+        <p>Email: maaircooling@gmail.com</p>
       </div>
     </div>
 

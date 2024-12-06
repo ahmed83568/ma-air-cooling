@@ -115,7 +115,31 @@ const Home = () => {
     <div data-scroll-container ref={scrollRef}>
 
 
-      {isFormVisible && (
+     
+
+      <HomeCarousel />
+
+      <div className="hero-card" style={{ padding:'2vw 2.5vw', background: "linear-gradient(135deg, #0047ab, #3b82f6)",width:'90%',margin:'3vh auto',borderRadius:'20px' }}>
+        <h1  className="hero-h1" style={{ textAlign: "center", fontSize: "calc(15px + 2vw)",fontWeight:'bold',color:'#fff',textTransform:'uppercase' }}>
+          Welcome to M.A.Air Cooling Sales & Services
+        </h1>
+        <p  className="hero-p"  style={{ textAlign: "center", fontSize: "calc(8px + 1.2vw)",textTransform:'uppercase',color:'#fff' }}>
+          Your trusted solution for air cooling sales, services, and spare
+          parts.
+        </p>
+      </div>
+      <Service/>
+
+      {/* Why Choose Us Section */}
+
+      {/* Sales and Services Section */}
+      <Sales />
+      <HomeChoose />
+
+      {/* Footer */}
+      <Footer/>
+    </div>
+    {isFormVisible && (
         <div
           style={{
             position: "fixed",
@@ -217,29 +241,6 @@ const Home = () => {
           </form>
         </div>
       )}
-
-      <HomeCarousel />
-
-      <div className="hero-card" style={{ padding:'2vw 2.5vw', background: "linear-gradient(135deg, #0047ab, #3b82f6)",width:'90%',margin:'3vh auto',borderRadius:'20px' }}>
-        <h1  className="hero-h1" style={{ textAlign: "center", fontSize: "calc(15px + 2vw)",fontWeight:'bold',color:'#fff',textTransform:'uppercase' }}>
-          Welcome to M.A.Air Cooling Sales & Services
-        </h1>
-        <p  className="hero-p"  style={{ textAlign: "center", fontSize: "calc(8px + 1.2vw)",textTransform:'uppercase',color:'#fff' }}>
-          Your trusted solution for air cooling sales, services, and spare
-          parts.
-        </p>
-      </div>
-      <Service/>
-
-      {/* Why Choose Us Section */}
-
-      {/* Sales and Services Section */}
-      <Sales />
-      <HomeChoose />
-
-      {/* Footer */}
-      <Footer/>
-    </div>
     <button
         onClick={handleQueryClick}
         className="any-query-button"

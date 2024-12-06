@@ -8,6 +8,7 @@ import maintainance from "../Images/maintainance.jpg";
 import consultant from "../Images/consultant.png";
 import { gsap } from 'gsap/gsap-core';
 
+
 const Sales = () => {
 
   useEffect(() => {
@@ -16,13 +17,13 @@ const Sales = () => {
       gsap.fromTo(
         ".sales-card",
         { x: -200, opacity: 0 },
-        { x: 0, opacity: 1, delay:4.2,duration: 1.6, stagger: 0.5, ease: "power2.out" }
+        { x: 0, opacity: 1, delay:4.2,duration: 1, stagger: 0.3, ease: "power2.out" }
       );
     }
     gsap.fromTo(
       ".sales-card",
       { x: -200, opacity: 0 ,scale:.3},
-      { x: 0, opacity: 1, delay:3.2,duration: 1.6, stagger: 0.5, ease: "power2.out",scale:1, }
+      { x: 0, opacity: 1, delay:3.2,duration: 1, stagger: 0.2, ease: "power2.out",scale:1, }
     )
     
   }, []);

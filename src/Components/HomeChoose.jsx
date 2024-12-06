@@ -1,17 +1,27 @@
 import React, { useEffect } from 'react';
 import './HomeChoose.css';
-import { use } from 'react';
 import { gsap } from 'gsap/gsap-core';
 
 const HomeChoose = () => {
+  useEffect(() => {
+    // Get the current page from the URL path
+    const currentPage = window.location.pathname;
+    console.log(currentPage)
 
-  useEffect(()=>{
-    gsap.fromTo(".home-choose-section",{
-      opacity:0,x:-300,
-    },{
-      opacity:1,delay:6,duration:1.5,x:0,
-    })
-  },[])
+    // Set delay based on the current page
+    const delayTime = currentPage === '/home' ? 4.5 : 2; // No delay for the about page
+
+    gsap.fromTo(".home-choose-section", {
+      opacity: 0,
+      x: -300,
+    }, {
+      opacity: 1,
+      delay: delayTime, // Conditional delay
+      duration: 1.5,
+      x: 0,
+    });
+  }, []);
+
   return (
     <section className="home-choose-section">
       <h2 className="section-title">Why Choose Us?</h2>

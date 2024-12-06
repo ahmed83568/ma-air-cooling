@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./About.css";
 import ac from "../Images/osama.jpg"
 import certificate from "../Images/certificate.jpg"
@@ -6,8 +6,32 @@ import { Link } from "react-router-dom";
 import certificate1 from "../Images/certificate1.jpg"
 import certificate2 from "../Images/certificate2.jpg"
 import HomeChoose from "./HomeChoose";
+import { gsap } from "gsap";
 
-const About = () => (
+
+const About = () => {
+  useEffect(() => {
+    // GSAP animation for the awards grid items
+    gsap.fromTo(
+      ".award-card",
+      {
+        opacity: 0,
+        y: -50, // Start from 50px below
+        scale: 0.3, // Start scaled down
+      },
+      {
+        opacity: 1,
+        y: 0, // End at normal position
+        scale: 1, 
+        delay:2.4,// End at normal scale
+        duration: .8,
+        stagger: 0.3, // Stagger the animations for each card
+      }
+    );
+  }, []);
+
+    return(
+
   <section className="about-section">
     <div className="about-banner">
       <h1>Welcome to M.A.Air Cooling</h1>
@@ -99,12 +123,12 @@ const About = () => (
       <div className="contact-section">
         <h2>Let’s Get Started</h2>
         <p>
-          Ready to redefine cooling? <Link to="/contact">Contact us</Link> today for personalized consultation and
+          Ready to redefine cooling? <Link to="/contactus">Contact us</Link> today for personalized consultation and
           cutting-edge solutions.
         </p>
       </div>
     </div>
   </section>
-);
+)};
 
 export default About;
