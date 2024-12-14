@@ -87,16 +87,19 @@ const Navbar = () => {
               width: "100%",
             }}
           >
-           {["Home", "About", "Services", "Contact Us"].map((link, index) => (
+           {["Home", "About", "Services", "Contact Us"].map((link, index) => {
+            return(
               <Link
                 key={link}
-                to={`/${link.toLowerCase().replace(" ", "")}`}
+                to={link === "Home" ? "/" : `/${link.toLowerCase().replace(" ", "")}`}
                 className="nav-link"
                 ref={(el) => (linksRef.current[index] = el)}
               >
                 {link}
               </Link>
-            ))}
+            )
+           }              
+            )}
           </nav>
         </div>
 

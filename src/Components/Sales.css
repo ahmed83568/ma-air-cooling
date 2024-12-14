@@ -41,13 +41,14 @@
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    background:linear-gradient(#00000023,#73a3eb);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
   }
   
   .sales-card:hover {
-    transform: scale(1.05);
+    background-color: #33333394;
+    transform: scale(1.5);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
   
@@ -55,13 +56,7 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 8px;
-  }
-  .sales-card-image:nth-child(3) {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    object-position: top;
+    object-position: center;
     border-radius: 8px;
   }
   
@@ -70,12 +65,13 @@
     font-size: 1.2rem;
     font-family: 'Poppins', sans-serif; 
     color: #007bff;
+    font-weight: bold;
   }
   
   .sales-card-desc {
     font-size: 1rem;
     font-family: 'Poppins', sans-serif; 
-    color: #555;
+    color: #000;
   }
   
   /* Responsive Styles */

@@ -31,8 +31,9 @@ const Footer = () => (
       {/* Contact Info */}
       <div className="footer-contact">
         <h4>Contact Us</h4>
-        <p>Phone: +91 9172136880</p>
-        <p>Email: maaircooling@gmail.com</p>
+        <p>Phone: <a href="tel:+919172136880" aria-label="Call +91 9172136880" style={{textDecoration:'none',color:'#fff'}}>+91 9172136880</a></p>
+
+         <a href="mailto:maaircooling@gmail.com" style={{textDecoration:'none'}}><p>Email: maaircooling@gmail.com</p></a>
       </div>
     </div>
 

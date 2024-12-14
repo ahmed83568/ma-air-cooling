@@ -31,7 +31,7 @@ const Sales = () => {
     {
       img: ac,
       title: 'Air Condition',
-      desc: 'High-quality air coolers with advanced cooling technology for your comfort.',
+      desc: 'High-quality air condition with advanced cooling technology for your comfort.',
     },
     {
       img: spare,
@@ -69,14 +69,14 @@ const Sales = () => {
         className="sales-card"
         key={index}
       >
-        <img src={img} alt={title} className="sales-card-image" />
+        <img src={img} alt={title} className="sales-card-image" style={{objectPosition:index===1?'center':'top'}} />
         <h4 className="sales-card-title">{title}</h4>
         <p className="sales-card-desc">{desc}</p>
       </div>
     ));
 
   return (
-    <section className="sales-section">
+    <section className="service-container">
       <h2 className="sales-heading">Sales and Services</h2>
 
       <div className="sales-block">

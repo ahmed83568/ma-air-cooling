@@ -6,10 +6,10 @@ const HomeChoose = () => {
   useEffect(() => {
     // Get the current page from the URL path
     const currentPage = window.location.pathname;
-    console.log(currentPage)
+    // console.log(currentPage)
 
     // Set delay based on the current page
-    const delayTime = currentPage === '/home' ? 4.5 : 2; // No delay for the about page
+    const delayTime = currentPage === '/' ? 4.5 : 2; // No delay for the about page
 
     gsap.fromTo(".home-choose-section", {
       opacity: 0,

@@ -8,6 +8,8 @@ import caro from "../Images/caro.jpg";
 import caro1 from "../Images/caro1.jpg";
 import caro2 from "../Images/caro2.jpg";
 import video from "../Images/video.mp4"
+import checking from "../Images/checking-conditioner.jpg"
+import solution from "../Images/solution.jpg"
 
 const HomeCarousel = () => {
   return (
@@ -15,8 +17,9 @@ const HomeCarousel = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={ac}
+          src={checking}
           alt="AC Installation"
+          style={{objectPosition:'top'}}
         />
         <Carousel.Caption className="carousel-caption">
           <h3>AC Installation</h3>
@@ -37,7 +40,7 @@ const HomeCarousel = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={caro}
+          src={solution}
           alt="AC Solutions"
         />
         <Carousel.Caption className="carousel-caption">

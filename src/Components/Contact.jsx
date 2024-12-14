@@ -17,7 +17,7 @@ const Contact = () => {
     }
     gsap.fromTo(
       cardRefs.current,
-      { opacity: 0, y: -1000,scale:.2 },
+      { opacity: 0, y: -1000,scale:0 },
       { opacity: 1, y: 0, duration: 0.8, scale:1, ease: "power2.out" }
     );
   }, []);

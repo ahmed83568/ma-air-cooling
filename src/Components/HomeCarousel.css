@@ -13,15 +13,15 @@
 .home-carousel img {
   width: 100%;
   height: 100%; /* Adjusts to the height of the parent container */
-  object-fit: cover; /* Ensures the image covers the entire area without distortion */
+  object-fit: contain; /* Ensures the image covers the entire area without distortion */
   object-position: center; /* Center the focal point of the image */
 }
 .home-carousel img:nth-child(1){
-  width: 100%;             /* Ensures the image stretches to the width of the carousel */
-  height: 50vh;            /* Sets the height to 50% of the viewport height */
-  object-fit: cover;       /* Ensures the image covers the entire area without distortion */
-  object-position: center;    /* Positions the image's focus on the top */
-  position: relative;      /* Allows further adjustments if needed */
+  width: 100%;           
+  height: 50vh;            
+  object-fit: cover;      
+  object-position: center;  
+  position: relative;      
 }
 
 
@@ -30,10 +30,10 @@
   bottom: 50%;
   left: 50%;
   transform: translate(5%,-10%);
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
   padding: 15px;
   border-radius: 5px;
-  bottom: 20px;
+  bottom: 20px; 
   text-align: center;
   height: 16vh;
 }
@@ -90,4 +90,6 @@
   .carousel-caption p {
     font-size: 1.1rem;
   }
+
+  
 }
