@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Home.css";
 import HomeCarousel from "./HomeCarousel";
 import { db } from "../../src/firebaseConfig";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc ,serverTimestamp} from "firebase/firestore";
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 
@@ -29,6 +29,7 @@ const Home = () => {
   const [phoneError, setPhoneError] = useState(false);
   const [isWhatsAppVisible, setIsWhatsAppVisible] = useState(false);
   const phoneNumber = process.env.REACT_APP_PHONE_NUMBER;
+  console.log(phoneNumber)
 
   useEffect(() => {
     const handleResize = () => {
@@ -91,14 +92,19 @@ const Home = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, phone } = formData;
+    const { name, email, phone, } = formData;
     if (!name || !email || !/^\d{10}$/.test(phone)) {
       setPhoneError(!phone ? true : false);
       alert("Please fill out the form correctly.");
       return;
     }
+    const dataWithTimestamp = {
+      ...formData,
+      timestamp: serverTimestamp(), // Firebase server-generated timestamp
+    };
     try {
-      await addDoc(collection(db, "queries"), formData);
+      await addDoc(collection(db, "queries"), dataWithTimestamp);
+      console.log(dataWithTimestamp)
       alert("Data submitted successfully!");
       setFormData({ name: "", email: "", query: "", phone: "" }); // Reset form
       setIsFormVisible(false); // Hide form after submission

@@ -7,6 +7,9 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Service from './Components/Service';
 import ScrollToTop from './Components/ScrollToTop';
+import AdminPanel from "./Components/AdminPanel";
+import AdminAccess from './Components/AdminAccess';
+import PrivateRoute from './Components/PrivateRoute';
 
 const App = () => (
   <Router>
@@ -14,6 +17,15 @@ const App = () => (
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/admin" element={<AdminAccess />} />
+      <Route
+        path="/adminpanel"
+        element={
+          <PrivateRoute>
+            <AdminPanel />
+          </PrivateRoute>
+        }
+      />
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Service />} />
       <Route path="/contactus" element={<Contact />} />
