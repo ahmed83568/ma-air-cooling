@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { collection, getDocs,serverTimestamp } from "firebase/firestore";
-import {db} from "../firebaseConfig" // Import Firestore instance
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 import "./AdminPanel.css";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const AdminPanel = () => {
-  const [users, setUsers] = useState([]); 
-  const [loading, setLoading] = useState(true); 
-  const [error, setError] = useState(null); 
-  const navigate=useNavigate()
-
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("isAdminAuthenticated");
     navigate("/admin");
   };
-  
 
-  // Fetch users from Firestore
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -28,10 +25,10 @@ const AdminPanel = () => {
         }));
 
         userList.sort((a, b) => {
-            const timeA = a.timestamp?.seconds || 0;
-            const timeB = b.timestamp?.seconds || 0;
-            return timeB - timeA;
-          });
+          const timeA = a.timestamp?.seconds || 0;
+          const timeB = b.timestamp?.seconds || 0;
+          return timeB - timeA;
+        });
 
         setUsers(userList);
       } catch (err) {
@@ -44,7 +41,6 @@ const AdminPanel = () => {
 
     fetchUsers();
   }, []);
-  console.log(users)
 
   return (
     <div className="admin-panel">
@@ -54,6 +50,7 @@ const AdminPanel = () => {
       {loading && <p>Loading data...</p>}
       {error && <p className="error-message">{error}</p>}
 
+      {/* Table view for larger screens */}
       {!loading && !error && (
         <table className="user-table">
           <thead>
@@ -66,22 +63,41 @@ const AdminPanel = () => {
             </tr>
           </thead>
           <tbody>
-            {users.sort((u,v)=>v.id-u.id).map((user) => (
+            {users.map((user) => (
               <tr key={user.id}>
                 <td>{user.id}</td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
-                <td>{user.phone}</td>
+                <td><a href={`tel:${user.phone}`}>{user.phone}</a></td>
                 <td>{user.timestamp?.toDate().toLocaleString()}</td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
-      <button onClick={handleLogout} style={{ padding: "7px 18px",borderRadius:'10px',position:'absolute',bottom:'5%',right:'5%', backgroundColor: "#DC143C", color: "white" ,outline:'none',border:'none'}}>
+
+      {/* Card view for smaller screens */}
+      {!loading && !error && (
+        <div className="user-card-container">
+          {users.map((user) => (
+            <div className="user-card" key={user.id}>
+              <h3>{user.name}</h3>
+              <p>Email: {user.email}</p>
+              <p>
+                Phone: <a href={`tel:${user.phone}`}>{user.phone}</a>
+              </p>
+              <p>Submitted At: {user.timestamp?.toDate().toLocaleString()}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <button
+        onClick={handleLogout}
+        className="logout-button"
+      >
         Logout
       </button>
-
     </div>
   );
 };

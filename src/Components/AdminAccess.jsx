@@ -26,7 +26,7 @@ const AdminAccess = () => {
   };
 
   if (isAuthenticated) {
-    return <AdminPanel />; // Render admin panel after successful authentication
+    return <AdminPanel />;
   }
 
   return (

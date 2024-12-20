@@ -1,42 +1,116 @@
 .admin-panel {
-    padding: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  overflow: visible;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  /* display: none; */
+}
+.user-card-container{
+  display: none;
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #f4f4f4;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 40px; /* Make it a specific distance */
+  right: 40px; /* Make it a specific distance */
+  background-color: #dc143c;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  z-index: 9999; /* Ensure it stays on top */
+}
+
+.logout-button:hover {
+  background-color: #b1122e;
+}
+
+
+.logout-button:hover {
+  background-color: #b1122e;
+}
+
+@media (max-width: 768px) {
   .user-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    display: none; /* Hidden on mobile */
   }
-  
-  .user-table th,
-  .user-table td {
+
+  .user-card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    /* position: relative; */
+  }
+
+  .user-card {
     border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: transform 0.2s ease;
   }
-  
-  .user-table th {
-    background-color: #f4f4f4;
+
+  .user-card:hover {
+    transform: translateY(-5px);
   }
-  
-  .user-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+
+  .user-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #007bff;
   }
-  
-  .user-table tr:hover {
-    background-color: #f1f1f1;
+
+  .user-card p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #555;
   }
-  
-  .error-message {
-    color: red;
-    text-align: center;
+
+  .logout-button {
+    position: absolute;
+    z-index: 1000;
+    bottom: 10px;
+    right: 10px;
   }
-  
+}
